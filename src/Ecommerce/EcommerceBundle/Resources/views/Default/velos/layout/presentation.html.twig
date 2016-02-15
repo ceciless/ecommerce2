@@ -1,0 +1,42 @@
+
+{% extends "::layout/layout.html.twig" %}
+
+{% block body %}
+<div class="container">
+    <div class="row">
+
+        <div class="span3">
+            {% include '::modulesUsed/navigation.html.twig' %}
+        </div>
+
+        <div class="span9">
+            <div class="row">
+                <div class="span5">
+                    <img src="{{ velo.image.path }}"  width="470" height="310">
+                </div>
+
+                <div class="span4">
+                    <h4>{{ velo.velonom }}</h4>
+                    <h5>{{ velo.categorie.catenom }}</h5>
+                    <p>{{ velo.description }}</p>
+                    <p>{{ velo.position }}</p>
+                    <h4>{{ velo.prix }}€/jour</h4>
+                    <form action="panier.php">
+
+                        <select name="qte" class="span1">
+                            <option>1</option>
+                        </select>
+
+                        <div>
+                            <button class="btn btn-primary">Réserver</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
