@@ -12,6 +12,8 @@ class VelosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $velos = $em->getRepository('EcommerceBundle:Velos')->byCategorie($categorie);
+        $categorie = $em->getRepository('EcommerceBundle:Categories')->find($categorie);
+         if (!$categorie) throw $this->createNotFoundException('La page \'existe pas.');
         return $this->render('EcommerceBundle:Default:velos/layout/velos.html.twig', array('velos' => $velos));
     }
 
@@ -27,6 +29,9 @@ class VelosController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
         $velo = $em->getRepository('EcommerceBundle:Velos')->find($id);
+        
+         if (!$velo) throw $this->createNotFoundException('La page \'existe pas.');
+
         return $this->render('EcommerceBundle:Default:velos/layout/presentation.html.twig', array('velo' => $velo));
     }
 

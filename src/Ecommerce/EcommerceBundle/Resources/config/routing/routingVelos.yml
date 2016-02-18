@@ -1,0 +1,15 @@
+velos:
+    path:     /
+    defaults: { _controller: EcommerceBundle:Velos:velos }
+
+presentation:
+    path:     /velo/{id}
+    defaults: { _controller: EcommerceBundle:Velos:presentation }
+
+categorieVelos:
+    path:     /categorie/{categorie}
+    defaults: { _controller: EcommerceBundle:Velos:categorie }
+
+rechercheVelos:
+    path:     /recherche
+    defaults: { _controller: EcommerceBundle:Velos:rechercheTraitement }

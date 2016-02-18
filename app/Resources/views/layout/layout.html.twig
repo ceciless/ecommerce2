@@ -40,19 +40,19 @@
 
             <div class="span4">
                 <h4>Notre entrepôt</h4>
-                <p><i class="icon-map-marker"></i>&nbsp;Brest 29200 - 2 rue Francois Verny </p>
+                <p><i class="icon-map-marker"></i>&nbsp;{{ adresse }}</p>
             </div>
 
             <div class="span2">
                 <h4>Nous contacter</h4>
-                <p><i class="icon-phone"></i>&nbsp;Tel: 06 50 60 29 75</p>
-                <p><i class="icon-print"></i>&nbsp;Email: sisi.ren@ensta-bretagne.org</p>  
+                <p><i class="icon-phone"></i>&nbsp;Tel: {{ telephone }}</p>
+                <p><i class="icon-print"></i>&nbsp;Email: {{ email }}</p>  
             </div>
         </div>
 
         <div class="row">
             <div class="span4">
-                <p>&copy; Copyright 2016 - veloCOmotion</p>
+                <p>&copy; Copyright {{ "now"|date('Y') }} - veloCOmotion</p>
             </div>
         </div>
     </div>

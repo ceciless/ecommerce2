@@ -1,32 +1,9 @@
-velos:
-    path:     /
-    defaults: { _controller: EcommerceBundle:Velos:velos }
+routingPanier:
+    resource: "@EcommerceBundle/Resources/config/routing/routingPanier.yml"
+    prefix:  /panier
 
-
-presentation:
-    path:     /velo/{id}
-    defaults: { _controller: EcommerceBundle:Velos:presentation }
-
-panier:
-    path:     /panier
-    defaults: { _controller: EcommerceBundle:Panier:panier }
-
-
-livraison:
-    path:     /panier/livraison
-    defaults: { _controller: EcommerceBundle:Panier:livraison }
-
-validation:
-    path:     /panier/validation
-    defaults: { _controller: EcommerceBundle:Panier:validation }
-
-categorieVelos:
-    path:     /categorie/{categorie}
-    defaults: { _controller: EcommerceBundle:Velos:categorie }
-
-rechercheVelos:
-    path:     /recherche
-    defaults: { _controller: EcommerceBundle:Velos:rechercheTraitement }
-
+routingVelos:
+    resource: "@EcommerceBundle/Resources/config/routing/routingVelos.yml"
+    prefix:  /
 
 
