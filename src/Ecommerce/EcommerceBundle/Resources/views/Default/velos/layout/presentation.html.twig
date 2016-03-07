@@ -1,6 +1,7 @@
 
 {% extends "::layout/layout.html.twig" %}
-
+{% block titre %}{{ velo.velonom }}{% endblock %}
+{% block description %}{{ velo.description }}{% endblock %}
 {% block body %}
 <div class="container">
     <div class="row">
@@ -20,11 +21,11 @@
                     <h5>{{ velo.categorie.catenom }}</h5>
                     <p>{{ velo.description }}</p>
                     <p>{{ velo.position }}</p>
-                    <h4>{{ velo.prix }}€/jour</h4>
+                    <h4>{{ velo.prix | tva(velo.tva.multiplicate) }}€/jour</h4>
                     <form action="panier.php">
 
                         <select name="qte" class="span1">
-                            <option>1</option>
+                            <option>1jour</option>
                         </select>
 
                         <div>

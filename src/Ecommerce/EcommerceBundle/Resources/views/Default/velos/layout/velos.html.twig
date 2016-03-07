@@ -1,12 +1,18 @@
 {% extends "::layout/layout.html.twig" %}
 
+
+
 {% block body %}
 <div class="container">
     <div class="row">
 
         <div class="span3">
             {% include '::modulesUsed/navigation.html.twig' %}
-            {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}   
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateursConnecte.html.twig' %}
+            {% else %}
+                    {% include 'UtilisateursBundle:Default:modulesUsed/utilisateurs.html.twig' %}
+            {% endif %}
         </div>
 
         <div class="span9">
@@ -19,7 +25,7 @@
                             <img src="{{ velo.image.path }}"  width="300" height="200">
                             <div class="caption">
                                 <h4>{{velo.velonom}}</h4>
-                                <p>{{velo.prix}}€/jour</p>
+                                <p>{{velo.prix | tva(velo.tva.multiplicate) }}€/jour</p>
                                 <a class="btn btn-primary" href="{{ path('presentation',  { 'id' : velo.id }) }}">Plus d'infos</a>
                                 <a class="btn btn-success" href="{{ path('panier') }}">Réserver </a>
                             </div>
